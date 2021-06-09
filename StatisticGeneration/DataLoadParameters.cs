@@ -25,6 +25,16 @@ namespace StatisticGeneration
         public int reactionsColumn;
         public int commentsColumn;
         public int repostsColumn;
+        public int likesColumn;
+        public int authorColumn;
+        public void SetLikesColumn(string columnName)
+        {
+            likesColumn = ColumnNameToNumber(columnName);
+        }
+        public void SetAuthorColumn(string columnName)
+        {
+            authorColumn = ColumnNameToNumber(columnName);
+        }
         public void SetReactionsColumn(string columnName)
         {
             reactionsColumn = ColumnNameToNumber(columnName);

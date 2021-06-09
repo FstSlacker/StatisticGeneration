@@ -126,6 +126,8 @@ namespace StatisticGeneration
                     parameters.SetReactionsColumn(tbReactionColumn.Text);
                     parameters.SetCommentsColumn(tbCommentsColumn.Text);
                     parameters.SetRepostsColumn(tbReactionColumn.Text);
+                    parameters.SetLikesColumn(tbLikesColumn.Text);
+                    parameters.SetAuthorColumn(tbAuthorColumn.Text);
                 }
                 catch (Exception err)
                 {

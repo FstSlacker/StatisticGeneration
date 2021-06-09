@@ -83,6 +83,7 @@ namespace StatisticGeneration
                 string reactions = table.Rows[i][parameters.reactionsColumn].ToString();
                 string comments = table.Rows[i][parameters.commentsColumn].ToString();
                 string reposts = table.Rows[i][parameters.repostsColumn].ToString();
+                string author = table.Rows[i][parameters.authorColumn].ToString();
 
                 reactions = Regex.Replace(reactions, "[^0-9]+$", "");
                 reactions = reactions.Equals("") ? "0" : reactions;
@@ -96,6 +97,8 @@ namespace StatisticGeneration
                 int reactionsInt = Convert.ToInt32(reactions);
                 int commentsInt = Convert.ToInt32(comments);
                 int repostsInt = Convert.ToInt32(reposts);
+
+                int involvementsInt = reactionsInt + commentsInt + repostsInt;
 
 
                 //Apply data
@@ -146,8 +149,10 @@ namespace StatisticGeneration
                         projects[j].AddPSubs(group, tonality, subs);
                         projects[j].AddInfoOccasionPSubs(infoOccasion, link, group, tonality, subs);
                         projects[j].mentions.AddStr(tonality, 1);
-                        projects[j].involvement.AddStr(tonality, reactionsInt + commentsInt + repostsInt);
+                        projects[j].involvement.AddStr(tonality, involvementsInt);
                         projects[j].AddPlaygroundMentions(playground, tonality, 1);
+
+                        projects[j].posts.Add(new PostData() { link = link, likes = reactions, reposts = reposts, comments = comments, tonality = tonality, involvements = involvementsInt.ToString(), author = author });
                     }
 
                 }

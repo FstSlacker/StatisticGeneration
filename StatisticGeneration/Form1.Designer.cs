@@ -73,6 +73,10 @@
             this.tbCommentsColumn = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.tbRepostsColumn = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.tbLikesColumn = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.tbAuthorColumn = new System.Windows.Forms.TextBox();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoadFileIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSaveFileIcon)).BeginInit();
@@ -181,7 +185,7 @@
             // btApply
             // 
             this.btApply.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btApply.Location = new System.Drawing.Point(262, 444);
+            this.btApply.Location = new System.Drawing.Point(262, 503);
             this.btApply.Name = "btApply";
             this.btApply.Size = new System.Drawing.Size(117, 23);
             this.btApply.TabIndex = 14;
@@ -245,7 +249,7 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.progressBar,
             this.lbStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 474);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 534);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(391, 22);
             this.statusStrip1.TabIndex = 21;
@@ -328,7 +332,7 @@
             // 
             this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label13.Location = new System.Drawing.Point(-55, 434);
+            this.label13.Location = new System.Drawing.Point(-55, 493);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(500, 1);
             this.label13.TabIndex = 29;
@@ -355,7 +359,7 @@
             // 
             // btTest
             // 
-            this.btTest.Location = new System.Drawing.Point(180, 443);
+            this.btTest.Location = new System.Drawing.Point(180, 502);
             this.btTest.Name = "btTest";
             this.btTest.Size = new System.Drawing.Size(75, 23);
             this.btTest.TabIndex = 32;
@@ -448,7 +452,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Calibri", 8.75F);
             this.label16.ForeColor = System.Drawing.Color.Gray;
-            this.label16.Location = new System.Drawing.Point(12, 448);
+            this.label16.Location = new System.Drawing.Point(12, 507);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(27, 14);
             this.label16.TabIndex = 37;
@@ -471,7 +475,7 @@
             this.tbReactionColumn.Name = "tbReactionColumn";
             this.tbReactionColumn.Size = new System.Drawing.Size(65, 23);
             this.tbReactionColumn.TabIndex = 38;
-            this.tbReactionColumn.Text = "R";
+            this.tbReactionColumn.Text = "X";
             this.tbReactionColumn.TextChanged += new System.EventHandler(this.tbReactionColumn_TextChanged);
             // 
             // label17
@@ -491,7 +495,7 @@
             this.tbCommentsColumn.Name = "tbCommentsColumn";
             this.tbCommentsColumn.Size = new System.Drawing.Size(65, 23);
             this.tbCommentsColumn.TabIndex = 40;
-            this.tbCommentsColumn.Text = "R";
+            this.tbCommentsColumn.Text = "AF";
             this.tbCommentsColumn.TextChanged += new System.EventHandler(this.tbCommentsColumn_TextChanged);
             // 
             // label18
@@ -511,14 +515,56 @@
             this.tbRepostsColumn.Name = "tbRepostsColumn";
             this.tbRepostsColumn.Size = new System.Drawing.Size(65, 23);
             this.tbRepostsColumn.TabIndex = 42;
-            this.tbRepostsColumn.Text = "R";
+            this.tbRepostsColumn.Text = "AG";
             this.tbRepostsColumn.TextChanged += new System.EventHandler(this.tbRepostsColumn_TextChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label19.Location = new System.Drawing.Point(12, 421);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(120, 15);
+            this.label19.TabIndex = 45;
+            this.label19.Text = "Колонка с лайками:";
+            // 
+            // tbLikesColumn
+            // 
+            this.tbLikesColumn.Font = new System.Drawing.Font("Calibri", 9.75F);
+            this.tbLikesColumn.Location = new System.Drawing.Point(174, 418);
+            this.tbLikesColumn.Name = "tbLikesColumn";
+            this.tbLikesColumn.Size = new System.Drawing.Size(65, 23);
+            this.tbLikesColumn.TabIndex = 44;
+            this.tbLikesColumn.Text = "R";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label20.Location = new System.Drawing.Point(12, 450);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(118, 15);
+            this.label20.TabIndex = 47;
+            this.label20.Text = "Колонка с автором:";
+            // 
+            // tbAuthorColumn
+            // 
+            this.tbAuthorColumn.Font = new System.Drawing.Font("Calibri", 9.75F);
+            this.tbAuthorColumn.Location = new System.Drawing.Point(174, 447);
+            this.tbAuthorColumn.Name = "tbAuthorColumn";
+            this.tbAuthorColumn.Size = new System.Drawing.Size(65, 23);
+            this.tbAuthorColumn.TabIndex = 46;
+            this.tbAuthorColumn.Text = "J";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(391, 496);
+            this.ClientSize = new System.Drawing.Size(391, 556);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.tbAuthorColumn);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.tbLikesColumn);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.tbRepostsColumn);
             this.Controls.Add(this.label17);
@@ -620,6 +666,10 @@
         private System.Windows.Forms.TextBox tbCommentsColumn;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox tbRepostsColumn;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox tbLikesColumn;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox tbAuthorColumn;
     }
 }
 

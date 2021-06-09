@@ -105,6 +105,32 @@ namespace StatisticGeneration
                 worksheet.Cells[row, column + 2] = "Нейтральная";
                 row++;
             }
+
+            column += 4;
+            worksheet.Cells[1, column] = "Ссылка";
+            worksheet.Cells[1, column + 1] = "Лайки";
+            worksheet.Cells[1, column + 2] = "Комментарии";
+            worksheet.Cells[1, column + 3] = "Репосты";
+            worksheet.Cells[1, column + 4] = "Вовлечение";
+            worksheet.Cells[1, column + 5] = "Тональность";
+            worksheet.Cells[1, column + 5] = "Автор";
+            row = 2;
+
+            Microsoft.Office.Interop.Excel.Range c1 = (Microsoft.Office.Interop.Excel.Range)worksheet.Cells[row, column];
+            Microsoft.Office.Interop.Excel.Range c2 = (Microsoft.Office.Interop.Excel.Range)worksheet.Cells[row + projectData.posts.Count - 1, column + 6];
+            Microsoft.Office.Interop.Excel.Range range = worksheet.get_Range(c1, c2);
+            range.Value = ProjectData.ConvertPostsListToArray(projectData.posts);
+            //foreach (var post in projectData.posts)
+            //{
+            //    worksheet.Cells[row, column] = post.link;
+            //    worksheet.Cells[row, column + 1] = post.likes;
+            //    worksheet.Cells[row, column + 2] = post.comments;
+            //    worksheet.Cells[row, column + 3] = post.reposts;
+            //    worksheet.Cells[row, column + 4] = post.involvements;
+            //    worksheet.Cells[row, column + 5] = post.tonality;
+            //    worksheet.Cells[row, column + 5] = post.author;
+            //    row++;
+            //}
         }
         private static void WriteGeneralData(GeneralData generalData, Microsoft.Office.Interop.Excel._Application app)
         {
@@ -167,6 +193,8 @@ namespace StatisticGeneration
             worksheet.Cells[1, column + 1] = "Проекты_количество";
             worksheet.Cells[1, column + 2] = "Проекты_тональность";
             row = 2;
+
+
             foreach (var project in generalData.projectsPSubs)
             {
                 worksheet.Cells[row, column] = project.Key;

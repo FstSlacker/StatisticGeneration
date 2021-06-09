@@ -6,6 +6,16 @@ using System.Threading.Tasks;
 
 namespace StatisticGeneration
 {
+    public class PostData
+    {
+        public string link;
+        public string likes;
+        public string comments;
+        public string reposts;
+        public string involvements;
+        public string tonality;
+        public string author;
+    }
     public class ProjectData
     {
         public string name;
@@ -17,10 +27,26 @@ namespace StatisticGeneration
         public Dictionary<string, Tonality> playgroundMentions = new Dictionary<string, Tonality>();
         public Dictionary<string, Tonality> infoOccasionPSubs = new Dictionary<string, Tonality>();
         public Dictionary<string, KeyValuePair<string, int>> infoOccasionLinks = new Dictionary<string, KeyValuePair<string, int>>();
-
+        public List<PostData> posts = new List<PostData>();
         //Groups dicts
         public Dictionary<string, GroupInfo> psubsGroups = new Dictionary<string, GroupInfo>();
         public Dictionary<string, Dictionary<string, GroupInfo>> infoOccasionsGroups = new Dictionary<string, Dictionary<string, GroupInfo>>();
+
+        public static string[,] ConvertPostsListToArray(List<PostData> postsData)
+        {
+            string[,] array = new string[postsData.Count, 7];
+            for(int i = 0; i < postsData.Count; i++)
+            {
+                array[i, 0] = postsData[i].link;
+                array[i, 1] = postsData[i].likes;
+                array[i, 2] = postsData[i].comments;
+                array[i, 3] = postsData[i].reposts;
+                array[i, 4] = postsData[i].involvements;
+                array[i, 5] = postsData[i].tonality;
+                array[i, 6] = postsData[i].author;
+            }
+            return array;
+        }
 
         public void AddPSubs(string group, string tonality, int subs)
         {
