@@ -123,6 +123,9 @@ namespace StatisticGeneration
                     parameters.SetDateColumn(tbDataColumn.Text);
                     parameters.SetLinkColumn(tbLinkColumn.Text);
                     parameters.SetProjectsColumns(tbProjectsColumn.Text, columnsTitles);
+                    parameters.SetReactionsColumn(tbReactionColumn.Text);
+                    parameters.SetCommentsColumn(tbCommentsColumn.Text);
+                    parameters.SetRepostsColumn(tbReactionColumn.Text);
                 }
                 catch (Exception err)
                 {
@@ -256,6 +259,21 @@ namespace StatisticGeneration
         private void tbProjectsColumn_TextChanged(object sender, EventArgs e)
         {
             FilterColumnText(tbProjectsColumn, true);
+        }
+
+        private void tbReactionColumn_TextChanged(object sender, EventArgs e)
+        {
+            FilterColumnText(tbReactionColumn);
+        }
+
+        private void tbCommentsColumn_TextChanged(object sender, EventArgs e)
+        {
+            FilterColumnText(tbCommentsColumn);
+        }
+
+        private void tbRepostsColumn_TextChanged(object sender, EventArgs e)
+        {
+            FilterColumnText(tbRepostsColumn);
         }
     }
 }

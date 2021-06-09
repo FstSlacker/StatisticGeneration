@@ -22,7 +22,21 @@ namespace StatisticGeneration
         public int tonalityColumn;
         public int dateColumn;
         public int linkColumn;
-
+        public int reactionsColumn;
+        public int commentsColumn;
+        public int repostsColumn;
+        public void SetReactionsColumn(string columnName)
+        {
+            reactionsColumn = ColumnNameToNumber(columnName);
+        }
+        public void SetCommentsColumn(string columnName)
+        {
+            commentsColumn = ColumnNameToNumber(columnName);
+        }
+        public void SetRepostsColumn(string columnName)
+        {
+            repostsColumn = ColumnNameToNumber(columnName);
+        }
         public void SetGroupColumn(string columnName)
         {
             groupColumn = ColumnNameToNumber(columnName);

@@ -11,8 +11,10 @@ namespace StatisticGeneration
         public string name;
         
         //Statistic
-        public Tonality mentions = new Tonality();
+        public Tonality mentions = new Tonality();//Упоминания
         public Tonality psubs = new Tonality();
+        public Tonality involvement = new Tonality();//Вовлечённость
+        public Dictionary<string, Tonality> playgroundMentions = new Dictionary<string, Tonality>();
         public Dictionary<string, Tonality> infoOccasionPSubs = new Dictionary<string, Tonality>();
         public Dictionary<string, KeyValuePair<string, int>> infoOccasionLinks = new Dictionary<string, KeyValuePair<string, int>>();
 
@@ -30,6 +32,19 @@ namespace StatisticGeneration
             else
             {
                 psubsGroups[group].AddMentions(tonality);
+            }
+        }
+        public void AddPlaygroundMentions(string playground, string tonality, int count)
+        {
+            if (!playgroundMentions.ContainsKey(playground))
+            {
+                Tonality _tonality = new Tonality();
+                _tonality.AddStr(tonality, count);
+                playgroundMentions.Add(playground, _tonality);
+            }
+            else
+            {
+                playgroundMentions[playground].AddStr(tonality, count);
             }
         }
         public void AddInfoOccasionPSubs(string infoOccasion, string link, string group, string tonality, int subs)

@@ -51,11 +51,44 @@ namespace StatisticGeneration
             worksheet.Cells[4, column] = "Нейтральная";
 
             column+=2;//разделение
+            worksheet.Cells[1, column] = "Вовлечение_количество";
+            worksheet.Cells[2, column] = projectData.involvement.positive.ToString();
+            worksheet.Cells[3, column] = projectData.involvement.negative.ToString();
+            worksheet.Cells[4, column] = projectData.involvement.neutral.ToString();
+
+            column++;
+            worksheet.Cells[1, column] = "Вовлечение_тональность";
+            worksheet.Cells[2, column] = "Позитивная";
+            worksheet.Cells[3, column] = "Негативная";
+            worksheet.Cells[4, column] = "Нейтральная";
+
+            column += 2;//разделение
+            worksheet.Cells[1, column] = "Источник_название";
+            worksheet.Cells[1, column + 1] = "Источник_упоминание";
+            worksheet.Cells[1, column + 2] = "Источник_тональность";
+            int row = 2;
+            foreach (var pment in projectData.playgroundMentions)
+            {
+                worksheet.Cells[row, column] = pment.Key;
+                worksheet.Cells[row, column + 1] = pment.Value.positive.ToString();
+                worksheet.Cells[row, column + 2] = "Позитивная";
+                row++;
+                worksheet.Cells[row, column] = pment.Key;
+                worksheet.Cells[row, column + 1] = pment.Value.negative.ToString();
+                worksheet.Cells[row, column + 2] = "Негативная";
+                row++;
+                worksheet.Cells[row, column] = pment.Key;
+                worksheet.Cells[row, column + 1] = pment.Value.neutral.ToString();
+                worksheet.Cells[row, column + 2] = "Нейтральная";
+                row++;
+            }
+
+            column += 3;//разделение
             worksheet.Cells[1, column] = "Инфоповоды_название";
             worksheet.Cells[1, column + 1] = "Инфоповоды_количество";
             worksheet.Cells[1, column + 2] = "Инфоповоды_тональность";
             worksheet.Cells[1, column + 3] = "Инфоповоды_ссылка";
-            int row = 2;
+            row = 2;
             foreach (var infoOccasion in projectData.infoOccasionPSubs)
             {
                 worksheet.Cells[row, column] = infoOccasion.Key;

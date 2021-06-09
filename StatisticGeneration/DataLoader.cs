@@ -80,6 +80,24 @@ namespace StatisticGeneration
                 string date = table.Rows[i][parameters.dateColumn].ToString();
                 string link = table.Rows[i][parameters.linkColumn].ToString();
 
+                string reactions = table.Rows[i][parameters.reactionsColumn].ToString();
+                string comments = table.Rows[i][parameters.commentsColumn].ToString();
+                string reposts = table.Rows[i][parameters.repostsColumn].ToString();
+
+                reactions = Regex.Replace(reactions, "[^0-9]+$", "");
+                reactions = reactions.Equals("") ? "0" : reactions;
+
+                comments = Regex.Replace(comments, "[^0-9]+$", "");
+                comments = comments.Equals("") ? "0" : comments;
+
+                reposts = Regex.Replace(reposts, "[^0-9]+$", "");
+                reposts = reposts.Equals("") ? "0" : reposts;
+
+                int reactionsInt = Convert.ToInt32(reactions);
+                int commentsInt = Convert.ToInt32(comments);
+                int repostsInt = Convert.ToInt32(reposts);
+
+
                 //Apply data
                 generalData.mentions.AddStr(tonality, 1);
                 generalData.AddPSubs(group, subs, tonality);
@@ -128,6 +146,8 @@ namespace StatisticGeneration
                         projects[j].AddPSubs(group, tonality, subs);
                         projects[j].AddInfoOccasionPSubs(infoOccasion, link, group, tonality, subs);
                         projects[j].mentions.AddStr(tonality, 1);
+                        projects[j].involvement.AddStr(tonality, reactionsInt + commentsInt + repostsInt);
+                        projects[j].AddPlaygroundMentions(playground, tonality, 1);
                     }
 
                 }
