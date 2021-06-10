@@ -588,6 +588,7 @@
             this.MaximumSize = new System.Drawing.Size(407, 534);
             this.MinimumSize = new System.Drawing.Size(407, 534);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Statistic Generation";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.statusStrip1.ResumeLayout(false);

@@ -103,7 +103,7 @@ namespace StatisticGeneration
             new Thread(() =>
             {
                 BeginInvoke(new ApplyControlDelegate(ApplyControl), false);
-                BeginInvoke(new ProgressDelegate(ChangeStatus), "Состояние: чтение файла...");
+                BeginInvoke(new ProgressDelegate(ChangeStatus), "Чтение файла...");
                 DataLoadParameters parameters = new DataLoadParameters();
                 string[] columnsTitles = null;
                 try
@@ -139,7 +139,7 @@ namespace StatisticGeneration
                     DataSaver.CreateErrorLog(err.Message + " " + err.ToString());
                     return;
                 }
-                BeginInvoke(new ProgressDelegate(ChangeStatus), "Состояние: обработка данных...");
+                BeginInvoke(new ProgressDelegate(ChangeStatus), "Обработка данных...");
                 Statistic statistic = null;
                 try
                 {
@@ -152,7 +152,7 @@ namespace StatisticGeneration
                     DataSaver.CreateErrorLog(err.Message + " " + err.ToString());
                     return;
                 }
-                BeginInvoke(new ProgressDelegate(ChangeStatus), "Состояние: сохранение результата...");
+                BeginInvoke(new ProgressDelegate(ChangeStatus), "Сохранение результата...");
                 try
                 {
                     //DataSaver.SaveDataAsJson(projects, "testJson.json");
