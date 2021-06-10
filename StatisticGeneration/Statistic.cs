@@ -14,6 +14,7 @@ namespace StatisticGeneration
         public TonalityGeneralData negativeData;
         public TonalityGeneralData neutralData;
         public DynamicData dynamicData;
+        public SocialNetworksData socialNetworkData;
     }
     /*
     public class Statistic

@@ -39,6 +39,7 @@ namespace StatisticGeneration
             TonalityGeneralData negativeData = new TonalityGeneralData();
             TonalityGeneralData neutralData = new TonalityGeneralData();
             DynamicData dynamicData = new DynamicData();
+            SocialNetworksData socialNetworksData = new SocialNetworksData();
 
             positiveData.name = "Позитивное информационное поле";
             negativeData.name = "Негативное информационное поле";
@@ -105,6 +106,8 @@ namespace StatisticGeneration
                 generalData.mentions.AddStr(tonality, 1);
                 generalData.AddPSubs(group, subs, tonality);
                 generalData.AddInfoOccasionPSubs(infoOccasion, group, subs, tonality, link);
+                socialNetworksData.AddSocialNetwork(playground, involvementsInt, tonality, subs, group);
+
                 switch (Tonality.ConvertToInt(tonality))
                 {
                     case 0:
@@ -173,7 +176,7 @@ namespace StatisticGeneration
             }
             stream.Close();
             excelReader.Close();
-            return new Statistic() { projects = projects, generalData = generalData, positiveData = positiveData, negativeData = negativeData, neutralData = neutralData, dynamicData = dynamicData};
+            return new Statistic() { projects = projects, generalData = generalData, positiveData = positiveData, negativeData = negativeData, neutralData = neutralData, dynamicData = dynamicData, socialNetworkData=socialNetworksData};
         }
     }
 }

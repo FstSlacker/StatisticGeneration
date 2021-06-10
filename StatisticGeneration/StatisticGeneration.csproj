@@ -80,6 +80,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="ProjectData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SocialNetworksData.cs" />
     <Compile Include="Statistic.cs" />
     <Compile Include="Tonality.cs" />
     <Compile Include="TonalityGeneralData.cs" />

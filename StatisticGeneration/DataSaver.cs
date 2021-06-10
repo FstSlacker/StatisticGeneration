@@ -116,21 +116,31 @@ namespace StatisticGeneration
             worksheet.Cells[1, column + 5] = "Автор";
             row = 2;
 
-            Microsoft.Office.Interop.Excel.Range c1 = (Microsoft.Office.Interop.Excel.Range)worksheet.Cells[row, column];
-            Microsoft.Office.Interop.Excel.Range c2 = (Microsoft.Office.Interop.Excel.Range)worksheet.Cells[row + projectData.posts.Count - 1, column + 6];
-            Microsoft.Office.Interop.Excel.Range range = worksheet.get_Range(c1, c2);
+            Range c1 = (Range)worksheet.Cells[row, column];
+            Range c2 = (Range)worksheet.Cells[row + projectData.posts.Count - 1, column + 6];
+            Range range = worksheet.get_Range(c1, c2);
             range.Value = ProjectData.ConvertPostsListToArray(projectData.posts);
-            //foreach (var post in projectData.posts)
-            //{
-            //    worksheet.Cells[row, column] = post.link;
-            //    worksheet.Cells[row, column + 1] = post.likes;
-            //    worksheet.Cells[row, column + 2] = post.comments;
-            //    worksheet.Cells[row, column + 3] = post.reposts;
-            //    worksheet.Cells[row, column + 4] = post.involvements;
-            //    worksheet.Cells[row, column + 5] = post.tonality;
-            //    worksheet.Cells[row, column + 5] = post.author;
-            //    row++;
-            //}
+
+        }
+        private static void WriteSocialNetworksData(SocialNetworksData socialNetworksData, _Application app)
+        {
+            Worksheet worksheet = app.Worksheets.Add(Type.Missing);
+            worksheet.Name = "Соц. сети";
+
+            worksheet.Cells[1, 1] = "Дата";
+            worksheet.Cells[1, 2] = "Источник";
+            worksheet.Cells[1, 3] = "Упоминания";
+            worksheet.Cells[1, 4] = "Аудитория";
+            worksheet.Cells[1, 5] = "Вовлечение";
+            worksheet.Cells[1, 6] = "Тональность";
+
+            int row = 2;
+            int column = 2;
+
+            Range c1 = (Range)worksheet.Cells[row, column];
+            Range c2 = (Range)worksheet.Cells[row + socialNetworksData.socialNetworks.Count * 3 - 1, column + 4];
+            Range range = worksheet.get_Range(c1, c2);
+            range.Value = socialNetworksData.ConvertToArray();
         }
         private static void WriteGeneralData(GeneralData generalData, Microsoft.Office.Interop.Excel._Application app)
         {
@@ -391,6 +401,7 @@ namespace StatisticGeneration
                 WriteTonalityGeneralData(statistic.negativeData, app, "Негативная");
                 WriteTonalityGeneralData(statistic.positiveData, app, "Позитивная");
                 WriteGeneralData(statistic.generalData, app);
+                WriteSocialNetworksData(statistic.socialNetworkData, app);
                 workbook.SaveAs(path, Microsoft.Office.Interop.Excel.XlFileFormat.xlOpenXMLWorkbook, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlShared, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
                 if (app != null) app.Quit();
             }
