@@ -12,6 +12,7 @@ namespace StatisticGeneration
         public int positiveData = 0;
         public int negativeData = 0;
         public int neutralData = 0;
+        public Tonality involvements = new Tonality();
         public Dictionary<string, Tonality> projectsData = new Dictionary<string, Tonality>();
 
         //Groups dicts

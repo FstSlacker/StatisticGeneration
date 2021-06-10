@@ -34,7 +34,7 @@ namespace StatisticGeneration
                     fc.Close();
                 }
                 StreamWriter sw = new StreamWriter(formParameterspath);
-                sw.Write(tbGroupColumn.Text + ";" + tbSubsColumn.Text + ";" + tbInfoOccasionColumn.Text + ";" + /*tbViewsColumn.Text*/"NaN" + ";" + tbPlaygroundColumn.Text + ";" + tbTonalityColumn.Text + ";" + tbDataColumn.Text + ";" + tbLinkColumn.Text + ";" + tbProjectsColumn.Text);
+                sw.Write(tbGroupColumn.Text + ";" + tbSubsColumn.Text + ";" + tbInfoOccasionColumn.Text + ";" + /*tbViewsColumn.Text*/"NaN" + ";" + tbPlaygroundColumn.Text + ";" + tbTonalityColumn.Text + ";" + tbDataColumn.Text + ";" + tbLinkColumn.Text + ";" + tbProjectsColumn.Text + ";" + tbReactionColumn.Text + ";" + tbCommentsColumn.Text + ";" + tbRepostsColumn.Text + ";" + tbAuthorColumn.Text);
                 sw.Close();
             }
             catch (Exception e)
@@ -58,6 +58,10 @@ namespace StatisticGeneration
                 tbDataColumn.Text = p[6];
                 tbLinkColumn.Text = p[7];
                 tbProjectsColumn.Text = p[8];
+                tbReactionColumn.Text = p[9];
+                tbCommentsColumn.Text = p[10];
+                tbRepostsColumn.Text = p[11];
+                tbAuthorColumn.Text = p[12];
                 sr.Close();
             }
             catch (Exception e)
@@ -126,7 +130,6 @@ namespace StatisticGeneration
                     parameters.SetReactionsColumn(tbReactionColumn.Text);
                     parameters.SetCommentsColumn(tbCommentsColumn.Text);
                     parameters.SetRepostsColumn(tbRepostsColumn.Text);
-                    parameters.SetLikesColumn(tbLikesColumn.Text);
                     parameters.SetAuthorColumn(tbAuthorColumn.Text);
                 }
                 catch (Exception err)
@@ -276,6 +279,11 @@ namespace StatisticGeneration
         private void tbRepostsColumn_TextChanged(object sender, EventArgs e)
         {
             FilterColumnText(tbRepostsColumn);
+        }
+
+        private void tbAuthorColumn_TextChanged(object sender, EventArgs e)
+        {
+            FilterColumnText(tbAuthorColumn);
         }
     }
 }

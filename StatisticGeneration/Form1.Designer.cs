@@ -73,8 +73,6 @@
             this.tbCommentsColumn = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.tbRepostsColumn = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.tbLikesColumn = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.tbAuthorColumn = new System.Windows.Forms.TextBox();
             this.statusStrip1.SuspendLayout();
@@ -185,7 +183,7 @@
             // btApply
             // 
             this.btApply.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btApply.Location = new System.Drawing.Point(262, 503);
+            this.btApply.Location = new System.Drawing.Point(262, 442);
             this.btApply.Name = "btApply";
             this.btApply.Size = new System.Drawing.Size(117, 23);
             this.btApply.TabIndex = 14;
@@ -249,7 +247,7 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.progressBar,
             this.lbStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 534);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 473);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(391, 22);
             this.statusStrip1.TabIndex = 21;
@@ -332,7 +330,7 @@
             // 
             this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label13.Location = new System.Drawing.Point(-55, 493);
+            this.label13.Location = new System.Drawing.Point(-55, 432);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(500, 1);
             this.label13.TabIndex = 29;
@@ -359,7 +357,7 @@
             // 
             // btTest
             // 
-            this.btTest.Location = new System.Drawing.Point(180, 502);
+            this.btTest.Location = new System.Drawing.Point(180, 441);
             this.btTest.Name = "btTest";
             this.btTest.Size = new System.Drawing.Size(75, 23);
             this.btTest.TabIndex = 32;
@@ -452,26 +450,26 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Calibri", 8.75F);
             this.label16.ForeColor = System.Drawing.Color.Gray;
-            this.label16.Location = new System.Drawing.Point(12, 507);
+            this.label16.Location = new System.Drawing.Point(12, 446);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(27, 14);
             this.label16.TabIndex = 37;
-            this.label16.Text = "v1.5";
+            this.label16.Text = "v1.6";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(12, 334);
+            this.label4.Location = new System.Drawing.Point(12, 321);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(164, 15);
+            this.label4.Size = new System.Drawing.Size(153, 15);
             this.label4.TabIndex = 39;
-            this.label4.Text = "Колонка с суммой реакций:";
+            this.label4.Text = "Колонка с сумм. реакций:";
             // 
             // tbReactionColumn
             // 
             this.tbReactionColumn.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.tbReactionColumn.Location = new System.Drawing.Point(174, 331);
+            this.tbReactionColumn.Location = new System.Drawing.Point(174, 318);
             this.tbReactionColumn.Name = "tbReactionColumn";
             this.tbReactionColumn.Size = new System.Drawing.Size(65, 23);
             this.tbReactionColumn.TabIndex = 38;
@@ -482,7 +480,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.Location = new System.Drawing.Point(12, 363);
+            this.label17.Location = new System.Drawing.Point(12, 347);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(162, 15);
             this.label17.TabIndex = 41;
@@ -491,7 +489,7 @@
             // tbCommentsColumn
             // 
             this.tbCommentsColumn.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.tbCommentsColumn.Location = new System.Drawing.Point(174, 360);
+            this.tbCommentsColumn.Location = new System.Drawing.Point(174, 344);
             this.tbCommentsColumn.Name = "tbCommentsColumn";
             this.tbCommentsColumn.Size = new System.Drawing.Size(65, 23);
             this.tbCommentsColumn.TabIndex = 40;
@@ -502,7 +500,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.Location = new System.Drawing.Point(12, 392);
+            this.label18.Location = new System.Drawing.Point(12, 373);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(131, 15);
             this.label18.TabIndex = 43;
@@ -511,37 +509,18 @@
             // tbRepostsColumn
             // 
             this.tbRepostsColumn.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.tbRepostsColumn.Location = new System.Drawing.Point(174, 389);
+            this.tbRepostsColumn.Location = new System.Drawing.Point(174, 370);
             this.tbRepostsColumn.Name = "tbRepostsColumn";
             this.tbRepostsColumn.Size = new System.Drawing.Size(65, 23);
             this.tbRepostsColumn.TabIndex = 42;
             this.tbRepostsColumn.Text = "AG";
             this.tbRepostsColumn.TextChanged += new System.EventHandler(this.tbRepostsColumn_TextChanged);
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label19.Location = new System.Drawing.Point(12, 421);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(120, 15);
-            this.label19.TabIndex = 45;
-            this.label19.Text = "Колонка с лайками:";
-            // 
-            // tbLikesColumn
-            // 
-            this.tbLikesColumn.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.tbLikesColumn.Location = new System.Drawing.Point(174, 418);
-            this.tbLikesColumn.Name = "tbLikesColumn";
-            this.tbLikesColumn.Size = new System.Drawing.Size(65, 23);
-            this.tbLikesColumn.TabIndex = 44;
-            this.tbLikesColumn.Text = "R";
-            // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label20.Location = new System.Drawing.Point(12, 450);
+            this.label20.Location = new System.Drawing.Point(12, 399);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(118, 15);
             this.label20.TabIndex = 47;
@@ -550,21 +529,20 @@
             // tbAuthorColumn
             // 
             this.tbAuthorColumn.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.tbAuthorColumn.Location = new System.Drawing.Point(174, 447);
+            this.tbAuthorColumn.Location = new System.Drawing.Point(174, 396);
             this.tbAuthorColumn.Name = "tbAuthorColumn";
             this.tbAuthorColumn.Size = new System.Drawing.Size(65, 23);
             this.tbAuthorColumn.TabIndex = 46;
             this.tbAuthorColumn.Text = "J";
+            this.tbAuthorColumn.TextChanged += new System.EventHandler(this.tbAuthorColumn_TextChanged);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(391, 556);
+            this.ClientSize = new System.Drawing.Size(391, 495);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.tbAuthorColumn);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.tbLikesColumn);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.tbRepostsColumn);
             this.Controls.Add(this.label17);
@@ -607,7 +585,8 @@
             this.Controls.Add(this.tbGroupColumn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(407, 424);
+            this.MaximumSize = new System.Drawing.Size(407, 534);
+            this.MinimumSize = new System.Drawing.Size(407, 534);
             this.Name = "MainForm";
             this.Text = "Statistic Generation";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -666,8 +645,6 @@
         private System.Windows.Forms.TextBox tbCommentsColumn;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox tbRepostsColumn;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox tbLikesColumn;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox tbAuthorColumn;
     }

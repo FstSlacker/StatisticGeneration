@@ -11,6 +11,11 @@ namespace StatisticGeneration
 
         public Dictionary<string, DynamicContent> data = new Dictionary<string, DynamicContent>();
 
+        public void AddInvolvements(string date, string tonality, int involvements)
+        {
+            AddDate(date);
+            data[date].involvements.AddStr(tonality, involvements);
+        }
         private void AddDate(string date)
         {
             if (!data.ContainsKey(date))

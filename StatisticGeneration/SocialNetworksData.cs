@@ -16,7 +16,7 @@ namespace StatisticGeneration
     public class SocialNetworksData
     {
         public Dictionary<string, PlaygroundData> socialNetworks = new Dictionary<string, PlaygroundData>();
-        public Dictionary<string, HashSet<string>> socialNetworksGroups = new Dictionary<string, HashSet<string>>();
+        public Dictionary<string, Dictionary<string, GroupInfo>> socialNetworksGroups = new Dictionary<string, Dictionary<string, GroupInfo>>();
 
         public string[,] ConvertToArray()
         {
@@ -51,11 +51,15 @@ namespace StatisticGeneration
         {
             if (socialNetworks.ContainsKey(playground))
             {
-                if (!socialNetworksGroups[playground].Contains(group))
+                if (!socialNetworksGroups[playground].ContainsKey(group))
                 {
                     
                     socialNetworks[playground].subs.AddStr(tonality, subs);
-                    socialNetworksGroups[playground].Add(group);
+                    socialNetworksGroups[playground].Add(group, new GroupInfo(group, subs, tonality));
+                }
+                else
+                {
+                    socialNetworksGroups[playground][group].AddMentions(tonality);
                 }
                 socialNetworks[playground].mentions.AddStr(tonality, 1);
                 socialNetworks[playground].involvements.AddStr(tonality, involvements);
@@ -67,8 +71,22 @@ namespace StatisticGeneration
                 socialNetworks[playground].mentions.AddStr(tonality, 1);
                 socialNetworks[playground].involvements.AddStr(tonality, involvements);
 
-                socialNetworksGroups.Add(playground, new HashSet<string>());
-                socialNetworksGroups[playground].Add(group);
+                socialNetworksGroups.Add(playground, new Dictionary<string, GroupInfo>());
+                socialNetworksGroups[playground].Add(group, new GroupInfo(group, subs, tonality));
+            }
+        }
+        public void SplitGroupSubs()
+        {
+            Tonality sumTonality;
+            var keysArray = socialNetworksGroups.Keys.ToArray();
+            foreach (var infooccasion in keysArray)
+            {
+                sumTonality = new Tonality();
+                foreach (var groupSubs in socialNetworksGroups[infooccasion])
+                {
+                    sumTonality = sumTonality + groupSubs.Value.GetTonalitySubs();
+                }
+                socialNetworks[infooccasion].subs = sumTonality;
             }
         }
     }

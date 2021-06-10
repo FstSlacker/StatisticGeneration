@@ -353,6 +353,21 @@ namespace StatisticGeneration
                 row += 3;
             }
 
+            column += 3;
+            row = 2;
+            worksheet.Cells[1, column] = "Вовлечение_количество";
+            worksheet.Cells[1, column + 1] = "Вовлечение_тональность";
+            foreach (var val in dynamicData.data)
+            {
+                worksheet.Cells[row, column] = val.Value.involvements.positive;
+                worksheet.Cells[row + 1, column] = val.Value.involvements.negative;
+                worksheet.Cells[row + 2, column] = val.Value.involvements.neutral;
+                worksheet.Cells[row, column + 1] = "Позитивная";
+                worksheet.Cells[row + 1, column + 1] = "Негативная";
+                worksheet.Cells[row + 2, column + 1] = "Нейтральная";
+                row += 3;
+            }
+
             column += 3;//разделение
             int columnStart = column;
             int rowStart = 2;

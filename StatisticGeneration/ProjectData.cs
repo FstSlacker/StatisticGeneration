@@ -128,9 +128,16 @@ namespace StatisticGeneration
             sortedList.Sort((pair1, pair2) => pair2.Value.Sum().CompareTo(pair1.Value.Sum()));
             infoOccasionPSubs = sortedList.ToDictionary(t => t.Key, t => t.Value);
         }
+        private void SortPlaygroundMentions()
+        {
+            var sortedList = playgroundMentions.ToList();
+            sortedList.Sort((pair1, pair2) => pair2.Value.Sum().CompareTo(pair1.Value.Sum()));
+            playgroundMentions = sortedList.ToDictionary(t => t.Key, t => t.Value);
+        }
         public void Sort()
         {
             SortInfoOccasionPSubs();
+            SortPlaygroundMentions();
         }
         //public Dictionary<string, HashSet<string>> dateGroups = new Dictionary<string, HashSet<string>>();
         //public Dictionary<string, Tonality> datePSubs = new Dictionary<string, Tonality>();

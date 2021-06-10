@@ -128,6 +128,8 @@ namespace StatisticGeneration
                 }
                 dynamicData.AddDynamicGeneral(date, tonality, group, subs);
                 dynamicData.AddDynamicGeneralTonality(date, group, tonality, subs);
+                dynamicData.AddInvolvements(date, tonality, involvementsInt);
+
                 for (int j = 0; j < projects.Count; j++)
                 {
                     string project = table.Rows[i][parameters.projectColumns[projects[j].name]].ToString();
@@ -162,6 +164,7 @@ namespace StatisticGeneration
             }
             generalData.SplitGroupSubs();
             dynamicData.SplitGroupSubs();
+            socialNetworksData.SplitGroupSubs();
             //Sort projects on dynamic data
             var keyList = dynamicData.data.Keys.ToArray();
             for(int i = 0; i < keyList.Length; i++)
